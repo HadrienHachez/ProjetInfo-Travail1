@@ -59,10 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Activity.cs" />
+    <Compile Include="Classes\Course.cs" />
     <Compile Include="Classes\CreateActivity.cs" />
     <Compile Include="Classes\Evaluation\Appreciation.cs" />
     <Compile Include="Classes\Evaluation\Cote.cs" />
-    <Compile Include="Classes\Evaluation\LinkToStudent.cs" />
+    <None Include="Classes\Evaluation\LinkToStudent.cs" />
     <Compile Include="Classes\Evaluation\Evaluation.cs" />
     <Compile Include="Classes\FileWrapper.cs" />
     <Compile Include="Classes\OutputBulletin.cs" />

@@ -10,12 +10,6 @@ namespace ConsoleApp
     {
         private Activity activity;
 
-        public Activity Activity
-        {
-            get { return activity; }
-            set { activity = value; }
-        }
-
         public virtual int Note()
         {
             return 0;
@@ -26,7 +20,7 @@ namespace ConsoleApp
 
         public override string ToString()
         {
-            return string.Format("{0} : {1}/20", activity, Note());
+            return string.Format("{0}", Note());
         }
     }
 }

@@ -23,9 +23,14 @@ namespace ConsoleApp
             }
         }
 
+        public override string DictKey()
+        {
+            return LastName;
+        }
+
         public Teacher(Person source, int salary) : base(source.FirstName, source.LastName)
         {
-            this.salary = salary;
+            Salary = salary;
         }
 
         public Teacher()

@@ -17,9 +17,9 @@ namespace ConsoleApp
             }
             Console.WriteLine("Done writing to the file(s)");
         }
+
         public static void ToConsole(Dictionary<string, Student> students)
         {
-            //Console.WriteLine(students.Keys);
             foreach (var key in students.Keys)
             {
                 Console.WriteLine(students[key].Bulletin());

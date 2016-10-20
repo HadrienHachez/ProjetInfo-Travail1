@@ -39,6 +39,11 @@ namespace ConsoleApp
             return String.Format("{0} {1}", FirstName, LastName);
         }
 
+        public virtual string DictKey()
+        {
+            return null;
+        }
+
         public Person()
         {
 

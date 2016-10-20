@@ -8,25 +8,30 @@ namespace ConsoleApp
 {
     class Student : Person
     {
-        private List<Evaluation> listeEval = new List<Evaluation>();
+        private List<Course> CourseList = new List<Course>();
 
         public Student(Person person) : base(person.FirstName, person.LastName)
         {
-            listeEval = new List<Evaluation>();
+            CourseList = new List<Course>();
         }
 
         public Student()
         { 
         }
 
-        public void Add(Evaluation new_eval)
+        public override string DictKey()
         {
-            listeEval.Add(new_eval);
+            return LastName + FirstName;
+        }
+
+        public void Add(Course newCourse)
+        {
+            CourseList.Add(newCourse);
         }
 
         public double Average()
         {
-            return Convert.ToDouble( listeEval.Sum(eval => eval.Note()) ) / (listeEval.Count*20);
+            return Convert.ToDouble( CourseList.Sum(course => course.Note(DictKey())) ) / (CourseList.Count*20);
         }
 
         public StringBuilder Bulletin()
@@ -35,8 +40,8 @@ namespace ConsoleApp
 
             bulletin.AppendLine(DisplayName());
 
-            foreach (Evaluation eval in listeEval)
-                bulletin.AppendLine(eval.ToString());            
+            foreach (Course course in CourseList)
+                bulletin.AppendLine(course.ToString() + course.Note(DictKey()));            
 
             bulletin.AppendLine(String.Format("Moyenne de {0:P}", Average()));
 

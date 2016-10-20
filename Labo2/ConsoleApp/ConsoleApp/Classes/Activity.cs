@@ -11,6 +11,7 @@ namespace ConsoleApp
         private int ects;
         private string name, code;
         private Teacher teacher;
+        private List<Student> students; 
 
         
         public int ECTS
