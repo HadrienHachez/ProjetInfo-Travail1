@@ -1,0 +1,3 @@
+﻿Nom|Prénom|Activités(séparées par des virgules)
+Hachez;Hadrien
+Krasowski;Marcin

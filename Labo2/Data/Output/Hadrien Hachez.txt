@@ -1,0 +1,13 @@
+Hadrien Hachez
+E3010 : Electronique numérique (5, Clémence Flémal) : 16/20
+E3020 : Electronique et programmation des systèmes embarqués (4, Cédric Marchand) : 16/20
+E3030 : Conception et programmation orientée objet (5, Philippe Dekimpe) : 16/20
+E3040 : Projet informatique (6, André Lorge) : 16/20
+E3050 : Signaux, systèmes et télécommunications (6, Franky De Bruyne) : 16/20
+E3070 : Technologies web (4, Quentin Lurkin) : 16/20
+E3080 : Projet électronique (6, François Defrance) : 16/20
+E3090 : Electromécanique appliquée (5, Xavier Van den Dooren) : 16/20
+B3010 : Stage (10, Marie-Françoise Lefebvre) : 16/20
+B3020 : L'entreprise et ses marchés (4, Grégoire Vanderveken) : 16/20
+Moyenne de 80,00 %
+

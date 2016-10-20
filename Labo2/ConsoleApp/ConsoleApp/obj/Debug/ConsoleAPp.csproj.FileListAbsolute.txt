@@ -1,0 +1,24 @@
+C:\Users\marci\Documents\OneDrive Entreprise\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\bin\Debug\ConsoleAPp.exe.config
+C:\Users\marci\Documents\OneDrive Entreprise\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\bin\Debug\ConsoleAPp.exe
+C:\Users\marci\Documents\OneDrive Entreprise\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\bin\Debug\ConsoleAPp.pdb
+C:\Users\marci\Documents\OneDrive Entreprise\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\obj\Debug\ConsoleAPp.csprojResolveAssemblyReference.cache
+C:\Users\marci\Documents\OneDrive Entreprise\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\obj\Debug\ConsoleAPp.exe
+C:\Users\marci\Documents\OneDrive Entreprise\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\obj\Debug\ConsoleAPp.pdb
+D:\OneDrive - Haute Ecole Léonard de Vinci\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\bin\Debug\ConsoleAPp.exe.config
+D:\OneDrive - Haute Ecole Léonard de Vinci\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\obj\Debug\ConsoleAPp.exe
+D:\OneDrive - Haute Ecole Léonard de Vinci\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\obj\Debug\ConsoleAPp.pdb
+D:\OneDrive - Haute Ecole Léonard de Vinci\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\bin\Debug\ConsoleAPp.exe
+D:\OneDrive - Haute Ecole Léonard de Vinci\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\bin\Debug\ConsoleAPp.pdb
+D:\OneDrive - Haute Ecole Léonard de Vinci\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
+D:\OneDrive for Business\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\bin\Debug\ConsoleApp.exe.config
+D:\OneDrive for Business\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\obj\Debug\ConsoleApp.exe
+D:\OneDrive for Business\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\obj\Debug\ConsoleApp.pdb
+D:\OneDrive for Business\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\bin\Debug\ConsoleApp.exe
+D:\OneDrive for Business\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\bin\Debug\ConsoleApp.pdb
+D:\OneDrive for Business\Visual Studio Projects\Labos\Labo2\ConsoleAPp\ConsoleAPp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\Dell\Desktop\Labo2\ConsoleApp\ConsoleAPp\bin\Debug\ConsoleApp.exe.config
+C:\Users\Dell\Desktop\Labo2\ConsoleApp\ConsoleAPp\obj\Debug\ConsoleApp.exe
+C:\Users\Dell\Desktop\Labo2\ConsoleApp\ConsoleAPp\obj\Debug\ConsoleApp.pdb
+C:\Users\Dell\Desktop\Labo2\ConsoleApp\ConsoleAPp\bin\Debug\ConsoleApp.exe
+C:\Users\Dell\Desktop\Labo2\ConsoleApp\ConsoleAPp\bin\Debug\ConsoleApp.pdb
+C:\Users\Dell\Desktop\Labo2\ConsoleApp\ConsoleAPp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
