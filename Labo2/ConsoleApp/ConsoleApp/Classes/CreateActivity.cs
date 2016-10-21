@@ -32,8 +32,8 @@ namespace ConsoleApp
     {
         public static Dictionary<string, Activity> FromFile(string path, Dictionary<string, Teacher> teacherDict)
         {
-            FileWrapper myFile = new FileWrapper(path);
-            List<string> myList = myFile.ReadFile();
+
+            List<string> myList = FileWrapper.ReadFile(path);
             Dictionary<string, Activity> activityDict = new Dictionary<string, Activity>();
 
             foreach (string line in myList)
