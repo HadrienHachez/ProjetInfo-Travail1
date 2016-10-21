@@ -12,13 +12,6 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
-            /*
-            LinkEvalToStudent.FromFile(notesPath, myActivities, myStudents);
-
-            //OutputBulletin.ToFile(outputPath, myStudents);
-            OutputBulletin.ToConsole(myStudents);
-             */
-
 
             //Ne pas oublier d'adapter ces 2 lignes de code
             // globalPath est le dossier où se trouvent les fichiers Students.txt, Teachers.txt, Activites.txt
@@ -35,25 +28,6 @@ namespace ConsoleApp
             Console.WriteLine(DictToString(myTeachers));
             Console.WriteLine(DictToString(myStudents));
             Console.WriteLine(DictToString(myActivities));
-
-            /*
-            Teacher myTeacher = new Teacher() { FirstName = "T.One", LastName = "T.Two", Salary = 500 };
-            Student myStudent = new Student() { FirstName = "Hadri", LastName = "Hein" };
-
-            Activity myActivity = new Activity() { ECTS = 3, Code = "Code", Name = "Name", Teacher = myTeacher };
-
-            Cote myEval = new Cote();
-            myEval.SetNote(15);
-
-            Course myCourse = new Course(myActivity);
-
-            myCourse.AddEval(myStudent, myEval);
-
-            myStudent.Add(myCourse);
-
-            Console.WriteLine(myStudent.Bulletin());
-            Console.WriteLine(myCourse.DisplayStudents());
-            */
 
             Console.ReadLine();
         }

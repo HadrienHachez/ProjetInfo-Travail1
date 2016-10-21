@@ -65,7 +65,7 @@ namespace ConsoleApp
             foreach (var people in myPeople)
             {
                 if (people.Item2 != null)
-                    myTeachers.Add(people.Item2.LastName, people.Item2);
+                    myTeachers.Add(people.Item2.DictKey(), people.Item2);
             }
             return myTeachers;
         }
@@ -77,7 +77,7 @@ namespace ConsoleApp
             foreach (var people in myPeople)
             {
                 if (people.Item1 != null)
-                    myStudents.Add(people.Item1.LastName+people.Item1.FirstName, people.Item1);
+                    myStudents.Add(people.Item1.DictKey(), people.Item1);
             }
             return myStudents;
 
