@@ -42,8 +42,7 @@ namespace ConsoleApp
     {
         private static List<Tuple<Student, Teacher>> FromFile(string path)
         {
-            FileWrapper myFile = new FileWrapper(path);
-            List<string> myList = myFile.ReadFile();
+            List<string> myList = FileWrapper.ReadFile(path);
             List<Tuple<Student, Teacher>> people = new List<Tuple<Student, Teacher>>();
 
             foreach (string line in myList)
