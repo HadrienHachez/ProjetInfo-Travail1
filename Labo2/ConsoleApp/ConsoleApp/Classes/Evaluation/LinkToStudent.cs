@@ -10,9 +10,7 @@ namespace ConsoleApp
     {
         public static void FromFile(string folderpath, Dictionary<string, Activity> activities, Dictionary<string, Student> students)
         {
-            List<string> activitiesKeys = activities.Keys.ToList();
-
-            foreach (string key in activitiesKeys)
+            foreach (string key in activities.Keys)
             {
                 string filePath = folderpath + key + ".txt";
                 List<string> studentNotes = FileWrapper.ReadFile(filePath);
@@ -26,9 +24,10 @@ namespace ConsoleApp
                         if (students.ContainsKey(studentKey))
                         {
                             var new_eval = CoteOrApprec(param[2]);
-                            new_eval.Activity = activities[key];
-                            //Console.WriteLine(new_eval);
-                            students[studentKey].Add(new_eval);
+                            Console.WriteLine(new_eval.Note());
+                            //Add eval to course
+                            //Add course to student
+                            
                         }
                     }
                 }

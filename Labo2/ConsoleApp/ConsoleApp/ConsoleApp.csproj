@@ -63,7 +63,7 @@
     <Compile Include="Classes\CreateActivity.cs" />
     <Compile Include="Classes\Evaluation\Appreciation.cs" />
     <Compile Include="Classes\Evaluation\Cote.cs" />
-    <None Include="Classes\Evaluation\LinkToStudent.cs" />
+    <Compile Include="Classes\Evaluation\LinkToStudent.cs" />
     <Compile Include="Classes\Evaluation\Evaluation.cs" />
     <Compile Include="Classes\FileWrapper.cs" />
     <Compile Include="Classes\OutputBulletin.cs" />
