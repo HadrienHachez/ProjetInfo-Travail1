@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    class CreateCourse
+    class CreateDictCourse
     {
-        class CreateDictCourse
-        {
             public static Dictionary<string, Course> FromFile(string path, Dictionary<string, Teacher> teacherDict)
             {
 
@@ -30,6 +28,5 @@ namespace ConsoleApp
 
                 return courseDict;
             }
-        }
     }
 }
