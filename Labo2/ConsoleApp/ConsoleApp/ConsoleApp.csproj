@@ -61,6 +61,7 @@
     <Compile Include="Classes\Activity.cs" />
     <Compile Include="Classes\Course.cs" />
     <Compile Include="Classes\CreateActivity.cs" />
+    <Compile Include="Classes\CreateCourse.cs" />
     <Compile Include="Classes\Evaluation\Appreciation.cs" />
     <Compile Include="Classes\Evaluation\Cote.cs" />
     <Compile Include="Classes\Evaluation\LinkToStudent.cs" />

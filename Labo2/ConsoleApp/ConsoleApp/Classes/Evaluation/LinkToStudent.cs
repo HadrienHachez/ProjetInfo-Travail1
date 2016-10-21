@@ -24,7 +24,7 @@ namespace ConsoleApp
                         if (students.ContainsKey(studentKey))
                         {
                             var new_eval = CoteOrApprec(param[2]);
-                            Console.WriteLine(new_eval.Note());
+                            Console.WriteLine("{0} : {1}", new_eval.Note(), students[studentKey].DisplayName());
                             //Add eval to course
                             //Add course to student
                             
