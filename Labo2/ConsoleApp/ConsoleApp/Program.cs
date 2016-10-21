@@ -30,10 +30,10 @@ namespace ConsoleApp
                 OutputBulletin.ToConsole(myStudents);
                  */
 
-            Teacher myTeacher = new Teacher() { FirstName = "One", LastName = "Two", Salary = 500 };
+            Teacher myTeacher = new Teacher() { FirstName = "T.One", LastName = "T.Two", Salary = 500 };
             Student myStudent = new Student() { FirstName = "Hadri", LastName = "Hein" };
 
-            Activity myActivity = new Activity() { ECTS = 3, Code = "0x000", Name = "Echec", Teacher = myTeacher };
+            Activity myActivity = new Activity() { ECTS = 3, Code = "Code", Name = "Name", Teacher = myTeacher };
 
             Cote myEval = new Cote();
             myEval.SetNote(15);
@@ -45,6 +45,7 @@ namespace ConsoleApp
             myStudent.Add(myCourse);
 
             Console.WriteLine(myStudent.Bulletin());
+            Console.WriteLine(myCourse.DisplayStudents());
             
             Console.ReadLine();
         }

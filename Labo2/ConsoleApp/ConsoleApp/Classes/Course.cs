@@ -26,6 +26,8 @@ namespace ConsoleApp
 
         public void AddEval(Student student, Evaluation eval)
         {
+            if (!students.Contains(student))
+                students.Add(student);
             evaluations.Add(student.DictKey(), eval);
         }
 
@@ -39,9 +41,16 @@ namespace ConsoleApp
             return -1.0;
         }
 
-        public string DisplayStudents()
+        public StringBuilder DisplayStudents()
         {
-            return null;
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Student student in students)
+            {
+                sb.AppendLine(student.DisplayName());
+            }
+
+            return sb;
         }
 
         public double Note(string dictKey)
