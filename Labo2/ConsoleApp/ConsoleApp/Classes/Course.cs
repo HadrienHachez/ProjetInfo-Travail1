@@ -12,16 +12,9 @@ namespace ConsoleApp
         private List<Student> students = new List<Student>();
         private Activity activity;
 
-        public Activity Activity
-        {
-            get { return activity; }
-            set { activity = value; }
-        }
-
-
         public Course(Activity activity)
         {
-            Activity = activity;
+            this.activity = activity;
         }
 
         public void AddEval(Student student, Evaluation eval)
@@ -60,12 +53,12 @@ namespace ConsoleApp
 
         public override string ToString()
         {
-            return Activity.ToString();
+            return activity.ToString();
         }
 
         public string DictKey()
         {
-            return Activity.Code;
+            return activity.Code;
         }
     }
 }

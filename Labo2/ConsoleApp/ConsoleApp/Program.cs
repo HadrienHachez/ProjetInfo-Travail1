@@ -34,6 +34,7 @@ namespace ConsoleApp
                 Console.WriteLine(item);
                 Console.WriteLine(item.DisplayStudents());
             }
+
             Console.ReadLine();
         }
 
