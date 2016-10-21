@@ -28,9 +28,9 @@ namespace ConsoleApp
 
             Console.WriteLine(DictToString(myTeachers));
             Console.WriteLine(DictToString(myStudents));
-            Console.WriteLine(DictToString(myActivities));
+            Console.WriteLine(DictToString(myCourses));
 
-            LinkEvalToStudent.FromFile(notesPath, myActivities, myStudents);
+            LinkEvalToStudent.FromFile(notesPath, myCourses, myStudents);
 
             Console.ReadLine();
         }
@@ -59,13 +59,13 @@ namespace ConsoleApp
             return sb;
         }
 
-        private static StringBuilder DictToString(Dictionary<string, Activity> dict)
+        private static StringBuilder DictToString(Dictionary<string, Course> dict)
         {
             StringBuilder sb = new StringBuilder();
 
-            foreach (var activity in dict.Values)
+            foreach (var course in dict.Values)
             {
-                sb.AppendLine(activity.ToString());
+                sb.AppendLine(course.ToString());
             }
 
             return sb;

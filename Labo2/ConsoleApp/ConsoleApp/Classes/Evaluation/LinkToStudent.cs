@@ -8,9 +8,9 @@ namespace ConsoleApp
 {
     class LinkEvalToStudent
     {
-        public static void FromFile(string folderpath, Dictionary<string, Activity> activities, Dictionary<string, Student> students)
+        public static void FromFile(string folderpath, Dictionary<string, Course> courses, Dictionary<string, Student> students)
         {
-            foreach (string key in activities.Keys)
+            foreach (string key in courses.Keys)
             {
                 string filePath = folderpath + key + ".txt";
                 List<string> studentNotes = FileWrapper.ReadFile(filePath);
