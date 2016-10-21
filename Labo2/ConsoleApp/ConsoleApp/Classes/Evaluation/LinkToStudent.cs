@@ -14,8 +14,8 @@ namespace ConsoleApp
 
             foreach (string key in activitiesKeys)
             {
-                FileWrapper activityFile = new FileWrapper(folderpath + key + ".txt");
-                List<string> studentNotes = activityFile.ReadFile();
+                string filePath = folderpath + key + ".txt";
+                List<string> studentNotes = FileWrapper.ReadFile(filePath);
 
                 foreach (string line in studentNotes)
                 {
