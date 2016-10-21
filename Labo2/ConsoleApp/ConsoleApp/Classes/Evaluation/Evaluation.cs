@@ -8,8 +8,6 @@ namespace ConsoleApp
 {
     class Evaluation
     {
-        private Activity activity;
-
         public virtual int Note()
         {
             return 0;

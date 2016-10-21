@@ -60,7 +60,12 @@ namespace ConsoleApp
 
         public override string ToString()
         {
-            return acti.ToString();
+            return Activity.ToString();
+        }
+
+        public string DictKey()
+        {
+            return Activity.Code;
         }
     }
 }
