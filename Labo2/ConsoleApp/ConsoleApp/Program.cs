@@ -12,23 +12,24 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            //var myActivities = CreateDictActivity.FromFile(globalPath + "Activities.txt", myTeachers);
             /*
-                //Ne pas oublier d'adapter ces 2 lignes de code
-                // globalPath est le dossier où se trouvent les fichiers Students.txt, Teachers.txt, Activites.txt
-                // ainsi que le dossier contenant les notes pour chaque unité
-                string globalPath = @"C:\Users\marci\Desktop\Data\";
-                string notesPath = globalPath + @"Notes\";
-                string outputPath = globalPath + @"Output\";
+            LinkEvalToStudent.FromFile(notesPath, myActivities, myStudents);
 
-                var myTeachers = CreateDictPeople.Teachers(globalPath + "Teachers.txt");
-                var myActivities = CreateDictActivity.FromFile(globalPath + "Activities.txt", myTeachers);
-                var myStudents = CreateDictPeople.Students(globalPath + "Students.txt");
+            //OutputBulletin.ToFile(outputPath, myStudents);
+            OutputBulletin.ToConsole(myStudents);
+             */
 
-                LinkEvalToStudent.FromFile(notesPath, myActivities, myStudents);
 
-                //OutputBulletin.ToFile(outputPath, myStudents);
-                OutputBulletin.ToConsole(myStudents);
-                 */
+            //Ne pas oublier d'adapter ces 2 lignes de code
+            // globalPath est le dossier où se trouvent les fichiers Students.txt, Teachers.txt, Activites.txt
+            // ainsi que le dossier contenant les notes pour chaque unité
+            string globalPath = @"C:\Users\marci\Desktop\Data\";
+            string notesPath = globalPath + @"Notes\";
+            string outputPath = globalPath + @"Output\";
+
+            var myTeachers = CreateDictPeople.Teachers(globalPath + "Teachers.txt");
+            var myStudents = CreateDictPeople.Students(globalPath + "Students.txt");
 
             Teacher myTeacher = new Teacher() { FirstName = "T.One", LastName = "T.Two", Salary = 500 };
             Student myStudent = new Student() { FirstName = "Hadri", LastName = "Hein" };

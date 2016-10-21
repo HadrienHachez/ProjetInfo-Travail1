@@ -12,7 +12,7 @@ namespace ConsoleApp
         private List<Student> students = new List<Student>();
         private Activity activity;
 
-        public Activity acti
+        public Activity Activity
         {
             get { return activity; }
             set { activity = value; }
@@ -21,7 +21,7 @@ namespace ConsoleApp
 
         public Course(Activity activity)
         {
-            acti = activity;
+            Activity = activity;
         }
 
         public void AddEval(Student student, Evaluation eval)
