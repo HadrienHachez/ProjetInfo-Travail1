@@ -24,16 +24,16 @@ namespace ConsoleApp
             var myTeachers = CreateDictPeople.Teachers(globalPath + "Teachers.txt");
             var myStudents = CreateDictPeople.Students(globalPath + "Students.txt");
             var myCourses = CreateDictCourse.FromFile(globalPath + "Activities.txt", myTeachers);
-            
-
-            Console.WriteLine(DictToString(myTeachers));
-            Console.WriteLine(DictToString(myStudents));
-            Console.WriteLine(DictToString(myCourses));
 
             LinkEvalToStudent.FromFile(notesPath, myCourses, myStudents);
 
             OutputBulletin.ToConsole(myStudents);
 
+            foreach (Course item in myCourses.Values)
+            {
+                Console.WriteLine(item);
+                Console.WriteLine(item.DisplayStudents());
+            }
             Console.ReadLine();
         }
 
