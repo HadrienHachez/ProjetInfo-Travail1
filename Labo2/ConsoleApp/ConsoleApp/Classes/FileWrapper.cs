@@ -9,27 +9,14 @@ namespace ConsoleApp
 {
     class FileWrapper
     {
-        private string filePath;
-
-        public string FilePath
-        {
-            get { return filePath; }
-            set { filePath = value; }
-        }
-
-        public FileWrapper (string filePath)
-        {
-            FilePath = filePath;
-        }
-
-        public List<string> ReadFile()
+        public static List<string> ReadFile(string filePath)
         {
             List<string> myList = new List<string> { };
 
-            if (!File.Exists(FilePath))
+            if (!File.Exists(filePath))
                 return myList;
 
-            using (StreamReader mySteam = File.OpenText(FilePath))
+            using (StreamReader mySteam = File.OpenText(filePath))
             {
                 string line;
                 while ( (line = mySteam.ReadLine()) != null)
@@ -41,23 +28,23 @@ namespace ConsoleApp
             return myList;
         }
 
-        private void WriteFile(List<string> list)
+        private static void WriteFile(List<string> list, string filePath)
         {
-            using (StreamWriter myFile = new StreamWriter(FilePath))
+            using (StreamWriter myFile = new StreamWriter(filePath))
                 {
                     foreach (string line in list)
                         myFile.WriteLineAsync(line);
                 }
         }
 
-        public void WriteToFile(List<string> list)
+        public static void WriteToFile(List<string> list, string filePath)
         {
-            WriteFile(list);
+            WriteFile(list, filePath);
         }
 
-        public void WriteToFile(StringBuilder sb)
+        public static void WriteToFile(StringBuilder sb, string filePath)
         {
-            WriteFile(new List<string>(sb.ToString().Split('\n')));
+            WriteFile(new List<string>(sb.ToString().Split('\n')), filePath);
         }
 
     }
