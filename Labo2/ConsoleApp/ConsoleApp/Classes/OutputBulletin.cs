@@ -12,8 +12,8 @@ namespace ConsoleApp
         {
             foreach (var key in students.Keys)
             {
-                FileWrapper studentFile = new FileWrapper(outputFilePath + students[key].DisplayName() + ".txt");
-                studentFile.WriteToFile(students[key].Bulletin());
+                string path = outputFilePath + students[key].DisplayName() + ".txt";
+                FileWrapper.WriteToFile(students[key].Bulletin(), path);
             }
             Console.WriteLine("Done writing to the file(s)");
         }
