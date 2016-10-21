@@ -32,6 +32,8 @@ namespace ConsoleApp
 
             LinkEvalToStudent.FromFile(notesPath, myCourses, myStudents);
 
+            OutputBulletin.ToConsole(myStudents);
+
             Console.ReadLine();
         }
 

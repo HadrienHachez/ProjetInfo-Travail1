@@ -23,10 +23,12 @@ namespace ConsoleApp
                         string studentKey = param[0] + param[1];
                         if (students.ContainsKey(studentKey))
                         {
+                            Student currentStudent = students[studentKey];
+                            Course currentCourse = courses[key];
+
                             var new_eval = CoteOrApprec(param[2]);
-                            Console.WriteLine("{0} : {1}", new_eval.Note(), students[studentKey].DisplayName());
-                            //Add eval to course
-                            //Add course to student
+                            currentCourse.AddEval(currentStudent, new_eval);
+                            currentStudent.Add(currentCourse);
                             
                         }
                     }
