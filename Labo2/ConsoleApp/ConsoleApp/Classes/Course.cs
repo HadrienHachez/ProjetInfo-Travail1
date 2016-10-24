@@ -27,25 +27,18 @@ namespace ConsoleApp
         public double StandardDeviation()
         {
             double average = Average(), tot = 0;
-            int i = 0;
+
             foreach (var item in evaluations.Values)
-            {
-                i++;
                 tot += Math.Pow(average - item.Note(),2);
-            }
+
             return Math.Pow(tot,1/2);
         }
 
         public double Average()
         {
-            double tot = 0;
-            int i = 0;
-            foreach (var item in evaluations.Values)
-            {
-                i++;
-                tot += item.Note();
-            }
-            return tot/i;
+            int i = evaluations.Count();
+            int somme = evaluations.Sum(x => x.Value.Note());
+            return Convert.ToDouble (somme/i);
         }
 
         public StringBuilder DisplayStudents()
@@ -60,7 +53,7 @@ namespace ConsoleApp
             return sb;
         }
 
-        public double Note(string dictKey)
+        public int Note(string dictKey)
         {
             return evaluations[dictKey].Note();
         }

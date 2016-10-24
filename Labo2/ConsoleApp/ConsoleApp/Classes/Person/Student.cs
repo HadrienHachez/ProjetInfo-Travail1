@@ -42,8 +42,8 @@ namespace ConsoleApp
 
             foreach (Course course in CourseList)
                 bulletin.AppendLine(String.Format("{0} Z:{1}", 
-                                            course.ToString() + course.Note(DictKey()), 
-                                            ComputeZ(course)));
+                                    course.ToString() + course.Note(DictKey()), 
+                                    ComputeZ(course)));
 
             bulletin.AppendLine(String.Format("Moyenne de {0:P}", Average()));
 
@@ -52,10 +52,7 @@ namespace ConsoleApp
 
         private double ComputeZ(Course stat)
         {
-            double note = stat.Note(DictKey());
-            double average = stat.Average();
-            double sd = stat.StandardDeviation();
-            return (note - average) / sd;
+            return (stat.Note(DictKey()) - stat.Average()) / stat.StandardDeviation();
         }
     }
 }
