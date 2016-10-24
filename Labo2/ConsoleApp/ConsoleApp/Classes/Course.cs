@@ -26,12 +26,26 @@ namespace ConsoleApp
 
         public double StandardDeviation()
         {
-            return -1.0;
+            double average = Average(), tot = 0;
+            int i = 0;
+            foreach (var item in evaluations.Values)
+            {
+                i++;
+                tot += Math.Pow(average - item.Note(),2);
+            }
+            return Math.Pow(tot,1/2);
         }
 
         public double Average()
         {
-            return -1.0;
+            double tot = 0;
+            int i = 0;
+            foreach (var item in evaluations.Values)
+            {
+                i++;
+                tot += item.Note();
+            }
+            return tot/i;
         }
 
         public StringBuilder DisplayStudents()

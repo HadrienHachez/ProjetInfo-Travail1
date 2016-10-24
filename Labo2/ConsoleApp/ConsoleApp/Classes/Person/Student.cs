@@ -41,11 +41,21 @@ namespace ConsoleApp
             bulletin.AppendLine(DisplayName());
 
             foreach (Course course in CourseList)
-                bulletin.AppendLine(course.ToString() + course.Note(DictKey()));            
+                bulletin.AppendLine(String.Format("{0} Z:{1}", 
+                                            course.ToString() + course.Note(DictKey()), 
+                                            ComputeZ(course)));
 
             bulletin.AppendLine(String.Format("Moyenne de {0:P}", Average()));
 
             return bulletin;
+        }
+
+        private double ComputeZ(Course stat)
+        {
+            double note = stat.Note(DictKey());
+            double average = stat.Average();
+            double sd = stat.StandardDeviation();
+            return (note - average) / sd;
         }
     }
 }

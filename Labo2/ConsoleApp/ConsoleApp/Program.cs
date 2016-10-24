@@ -17,7 +17,7 @@ namespace ConsoleApp
             // globalPath est le dossier où se trouvent les fichiers Students.txt, Teachers.txt, Activites.txt
             // ainsi que le dossier contenant les notes pour chaque unité
 
-            string globalPath = @"C:\Users\marci\Desktop\Data\";
+            string globalPath = @"H:\ProjetInfo-Travail1\Labo2\Data\";
             string notesPath = globalPath + @"Notes\";
             string outputPath = globalPath + @"Output\";
 
