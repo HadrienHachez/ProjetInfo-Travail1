@@ -23,7 +23,12 @@ namespace ConsoleApp
 
             var myTeachers = CreateDictPeople.Teachers(globalPath + "Teachers.txt");
             var myStudents = CreateDictPeople.Students(globalPath + "Students.txt");
-            var myCourses = CreateDictCourse.FromFile(globalPath + "Activities.txt", myTeachers);            
+            var myCourses = CreateDictCourse.FromFile(globalPath + "Activities.txt", myTeachers);
+
+            var HumanInterface = new Interface(myStudents, myCourses);
+
+            while(HumanInterface.running)
+                HumanInterface.Display();     
 
             Console.ReadLine();
         }
