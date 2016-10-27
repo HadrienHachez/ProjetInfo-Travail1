@@ -11,9 +11,8 @@ namespace ConsoleApp
         private int currentMenu=1;
         private Dictionary<string, int> menuDict = new Dictionary<string, int>() { {"0", 0 },
                                                                                    {"", 1 },
-                                                                                   {"1", 1 },
-                                                                                   {"3", 3 },
-                                                                                   {"2", 2 } };
+                                                                                   {"2", 3 },
+                                                                                   {"1", 2 } };
 
         private Dictionary<string, Student> _students = new Dictionary<string, Student>();
         private Dictionary<string, Course> _courses = new Dictionary<string, Course>();
@@ -38,13 +37,13 @@ namespace ConsoleApp
                 case 2:
                     Console.Clear();
                     StudentMenu();
-                    Navigate();
+                    currentMenu = 1;
                     break;
 
                 case 3:
                     Console.Clear();
                     CoursesMenu();
-                    Navigate();
+                    currentMenu = 1;
                     break;
 
                 case 0:
@@ -77,12 +76,11 @@ namespace ConsoleApp
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("\n Menu Index");
-            Console.WriteLine("1) Main Menu");
-            Console.WriteLine("2) Students");
-            Console.WriteLine("3) Courses");
+            Console.WriteLine("1) Students");
+            Console.WriteLine("2) Courses");
             Console.WriteLine("0) Exit\n");
             Console.ResetColor();
-            Console.Write("Choose option [0-3] : ");
+            Console.Write("Choose option [0-2] : ");
         }
 
         //Shows the welcome message
@@ -114,6 +112,7 @@ namespace ConsoleApp
                 if (dictKey != null) //If we match the input to a student, then print out it's bulletin
                 {
                     WriteBulletin(_students[dictKey]);
+                    ExitMessage("\nPress any key to go back to Menu Index");
                 }
             } while (dictKey == null);
             Console.Clear();
@@ -128,6 +127,7 @@ namespace ConsoleApp
             string data = OutputCourseDetails("Input course code : ");
             Console.Clear();
             Console.WriteLine(data);
+            ExitMessage("\nPress any key to go back to Menu Index");
         }
 
         private void DisplayAllStudents()
@@ -224,7 +224,6 @@ namespace ConsoleApp
             string directoryOutput = input.EndsWith("\\") ? input : input + "\\"; // si input ne se finit pas par "\", on l'ajoute
             OutputBulletin.ToFile(directoryOutput, student);
             Console.WriteLine("Written to the file sucessfully");
-            ExitMessage("Press any key to go back to Menu Index");
         }
 
     }
