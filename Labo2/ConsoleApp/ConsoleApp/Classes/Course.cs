@@ -36,7 +36,9 @@ namespace ConsoleApp
 
         public double Average()
         {
-            return Convert.ToDouble(evaluations.Count()) / Convert.ToDouble(evaluations.Sum(x => x.Value.Note()));
+            double i = Convert.ToDouble(evaluations.Count());
+            double sum = Convert.ToDouble(evaluations.Sum(x => x.Value.Note()));
+            return sum/i;
         }
 
         public StringBuilder DisplayStudents()
