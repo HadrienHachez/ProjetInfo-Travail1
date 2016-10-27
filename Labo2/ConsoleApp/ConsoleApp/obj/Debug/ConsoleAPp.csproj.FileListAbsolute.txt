@@ -27,3 +27,9 @@ H:\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\obj\Debug\ConsoleApp.pdb
 H:\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\bin\Debug\ConsoleApp.exe
 H:\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\bin\Debug\ConsoleApp.pdb
 H:\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\marci\Desktop\Travail\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\bin\Debug\ConsoleApp.exe.config
+C:\Users\marci\Desktop\Travail\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\obj\Debug\ConsoleApp.exe
+C:\Users\marci\Desktop\Travail\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\obj\Debug\ConsoleApp.pdb
+C:\Users\marci\Desktop\Travail\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\bin\Debug\ConsoleApp.exe
+C:\Users\marci\Desktop\Travail\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\bin\Debug\ConsoleApp.pdb
+C:\Users\marci\Desktop\Travail\ProjetInfo-Travail1\Labo2\ConsoleApp\ConsoleAPp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
