@@ -31,7 +31,7 @@ namespace ConsoleApp
             foreach (var item in evaluations.Values)
                 tot += Math.Pow(average - item.Note(),2);
 
-            return Math.Pow(tot,1/2);
+            return Math.Sqrt(tot);
         }
 
         public double Average()
