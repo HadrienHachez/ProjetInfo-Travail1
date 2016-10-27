@@ -57,7 +57,7 @@ namespace ConsoleApp
 
         private double ComputeZ(Course stat)
         {
-            return (stat.Note(DictKey()) - stat.Average()) / stat.StandardDeviation();
+            return ( Convert.ToDouble(stat.Note(DictKey())) - stat.Average()) / stat.StandardDeviation();
         }
     }
 }
