@@ -17,7 +17,7 @@ namespace ConsoleApp
             // globalPath est le dossier où se trouvent les fichiers Students.txt, Teachers.txt, Activites.txt
             // ainsi que le dossier contenant les notes pour chaque unité
 
-            string globalPath = @"C:\Users\marci\Desktop\Data\";
+            string globalPath = @"C:\Data\";
             string notesPath = globalPath + @"Notes\";
             string outputPath = globalPath + @"Output\";
 
@@ -26,6 +26,8 @@ namespace ConsoleApp
             var myCourses = CreateDictCourse.FromFile(globalPath + "Activities.txt", myTeachers);
 
             LinkEvalToStudent.FromFile(notesPath, myCourses, myStudents);
+
+            OutputBulletin.ToFile(outputPath, myStudents);
 
             var HumanInterface = new Interface(myStudents, myCourses);
 

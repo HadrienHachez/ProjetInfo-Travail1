@@ -9,7 +9,8 @@ namespace ConsoleApp
     class Interface
     {
         private int currentMenu=1;
-        private Dictionary<string, int> menuDict = new Dictionary<string, int>() { { "0", 0 },
+        private Dictionary<string, int> menuDict = new Dictionary<string, int>() { {"0", 0 },
+                                                                                   {"", 1 },
                                                                                    {"1", 1 },
                                                                                    {"3", 3 },
                                                                                    {"2", 2 } };
@@ -48,7 +49,7 @@ namespace ConsoleApp
 
                 case 0:
                     Console.Clear();
-                    ExitMessage();
+                    ExitMessage("Press any key to exit");
                     running = false;
                     break;
             }
@@ -72,35 +73,55 @@ namespace ConsoleApp
 
         private void MenuIndex()
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\n Menu Index");
             Console.WriteLine("1) Main Menu");
             Console.WriteLine("2) Students");
             Console.WriteLine("3) Courses");
-            Console.WriteLine("0) Exit");
+            Console.WriteLine("0) Exit\n");
+            Console.ResetColor();
+            Console.Write("Choose option [0-3] : ");
         }
 
         private void Welcome()
         {
-            Console.WriteLine("__--**Bulletin 2.0**--__");
+            Console.WriteLine("__--** Bulletin 2.0 **--__\n");
         }
 
-        private void ExitMessage()
+        private void ExitMessage(string exitMessage)
         {
-            Console.WriteLine("Press any key to exit");
+            Console.WriteLine(exitMessage);
             Console.ReadKey();
             Console.Clear();
         }
 
         private void StudentMenu()
         {
-            DisplayAllStudents();
-            Console.WriteLine();
-            Console.WriteLine(OutputStudentNotes("Firstname lastname : "));
+            string dictKey;
+
+            do
+            {
+                DisplayAllStudents();
+                Console.WriteLine();
+                string data = OutputStudentNotes("Input the firstname and lastname of the student : ", out dictKey);
+                Console.Clear();
+                Console.WriteLine(data);
+                if (dictKey != null)
+                {
+                    WriteBulletin(_students[dictKey]);
+                }
+            } while (dictKey == null);
+            Console.Clear();
+            
         }
 
         private void CoursesMenu()
         {
             DisplayAllCourses();
             Console.WriteLine();
+            string data = OutputCourseDetails("Input course code : ");
+            Console.Clear();
+            Console.WriteLine(data);
         }
 
         private void DisplayAllStudents()
@@ -124,19 +145,63 @@ namespace ConsoleApp
             return String.Concat(userInput.Split()).ToUpper();
         }
 
-        private string OutputStudentNotes(string message)
-        {
-            string dictKey = BuildDictKey(GatherInput(message));
-            if (_students.Keys.Contains(dictKey))
-                return _students[dictKey].Bulletin().ToString();
-            else
-                return "N'existe pas";
-        }
-
         private string GatherInput(string messageToShow)
         {
             Console.Write(messageToShow);
             return Console.ReadLine();
+        }
+
+        private string OutputStudentNotes(string message, out string key)
+        {
+            string input = GatherInput(message);
+            string dictKey = BuildDictKey(input);
+
+            if (_students.Keys.Contains(dictKey))
+            {
+                key = dictKey;
+                return _students[dictKey].Bulletin().ToString();
+            }
+            else
+            {
+                key = null;
+                return String.Format("Student \"{0}\" doesn't exist\n", input);
+            }
+        }
+
+        private string OutputCourseDetails(string message)
+        {
+            string dictKey = BuildDictKey(GatherInput(message));
+            if (_courses.Keys.Contains(dictKey))
+                return BuildCourseDetails(_courses[dictKey]);
+            else
+                return String.Format("Course with code {0} doesn't exist", dictKey);
+
+        }
+
+        private string BuildCourseDetails(Course myCourse)
+        {
+            return String.Format("{0}\n\n{1}\nwith an average score of {2}/20", 
+                                    myCourse.ToString(), 
+                                    myCourse.StudentNotes(), 
+                                    myCourse.Average());
+        }
+
+        private void WriteBulletin(Student student)
+        {
+            Console.WriteLine("Would you like to write the bulletin to a file? (Y/N)");
+            string keyStroke = Console.ReadKey().Key.ToString();
+            if (keyStroke.ToUpper() == "Y")
+                WriteToFile(student);      
+        }
+
+        private void WriteToFile(Student student)
+        {
+            Console.WriteLine("\nInput a directory to output the file : ");
+            string input = Console.ReadLine();
+            string directoryOutput = input.EndsWith("\\") ? input : input + "\\"; // si input ne se finit pas par "\", on l'ajoute
+            OutputBulletin.ToFile(directoryOutput, student);
+            Console.WriteLine("Written to the file sucessfully");
+            ExitMessage("Press any key to go back to Menu Index");
         }
 
     }

@@ -53,6 +53,18 @@ namespace ConsoleApp
             return sb;
         }
 
+        public string StudentNotes()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Student student in students)
+            {
+                sb.AppendLine(String.Format("{0} with a score of {1}", student.DisplayName(), Note(student.DictKey())));
+            }
+
+            return sb.ToString();
+        }
+
         public int Note(string dictKey)
         {
             return evaluations[dictKey].Note();
