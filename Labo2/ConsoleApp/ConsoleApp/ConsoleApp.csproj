@@ -67,7 +67,7 @@
     <Compile Include="Classes\Evaluation\LinkToStudent.cs" />
     <Compile Include="Classes\Evaluation\Evaluation.cs" />
     <Compile Include="Classes\FileWrapper.cs" />
-    <Compile Include="Classes\Interface\Menu.cs" />
+    <Compile Include="Classes\Interface\Interface.cs" />
     <Compile Include="Classes\OutputBulletin.cs" />
     <Compile Include="Classes\Person\CreatePerson.cs" />
     <Compile Include="Classes\Person\Student.cs" />
