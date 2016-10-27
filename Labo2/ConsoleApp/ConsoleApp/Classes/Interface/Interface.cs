@@ -8,10 +8,10 @@ namespace ConsoleApp
 { 
     class Interface
     {
-        private int currentMenu=0;
+        private int currentMenu=1;
         private Dictionary<string, int> menuDict = new Dictionary<string, int>() { { "0", 0 },
-                                                                                   { "-1", -1 },
                                                                                    {"1", 1 },
+                                                                                   {"3", 3 },
                                                                                    {"2", 2 } };
 
         private Dictionary<string, Student> _students = new Dictionary<string, Student>();
@@ -24,42 +24,72 @@ namespace ConsoleApp
             _courses = courses;
         }
 
-        private void MainMenu()
+        public void Display()
         {
-            Console.WriteLine("Main Menu : 0");
-            Console.WriteLine("Students : 1");
-            Console.WriteLine("Courses : 2");
-            Console.WriteLine("Exit : -1");
+            switch (currentMenu)
+            {
+                case 1:
+                    Console.Clear();
+                    Welcome();
+                    Navigate();
+                    break;
+
+                case 2:
+                    Console.Clear();
+                    StudentMenu();
+                    Navigate();
+                    break;
+
+                case 3:
+                    Console.Clear();
+                    CoursesMenu();
+                    Navigate();
+                    break;
+
+                case 0:
+                    Console.Clear();
+                    ExitMessage();
+                    running = false;
+                    break;
+            }
+        }
+
+        private void MenuIndex()
+        {
+            Console.WriteLine("1) Main Menu");
+            Console.WriteLine("2) Students");
+            Console.WriteLine("3) Courses");
+            Console.WriteLine("0) Exit");
         }
 
         private void Welcome()
         {
-            Console.WriteLine("Welcome message");
+            Console.WriteLine("__--**Bulletin 2.0**--__");
         }
 
         private void ExitMessage()
         {
-            Console.WriteLine("Goodbye!");
+            Console.WriteLine("Press any key to exit");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private void StudentMenu()
         {
-            foreach (var student in _students.Values)
-            {
-                Console.WriteLine(student.DisplayName());
-            }
+            DisplayAllStudents();
+            Console.WriteLine();
         }
 
         private void CoursesMenu()
         {
-            foreach (var course in _courses.Values)
-            {
-                Console.WriteLine(course.ToString());
-            }
+            DisplayAllCourses();
+            Console.WriteLine();
         }
 
-        private void Navigate(string param)
+        private void Navigate()
         {
+            MenuIndex();
+            string param = Console.ReadLine();
             if (menuDict.Keys.Contains(param))
             {
                 Console.WriteLine(currentMenu);
@@ -68,39 +98,31 @@ namespace ConsoleApp
             else
             {
                 Console.WriteLine(currentMenu);
-                currentMenu = -1;
+                currentMenu = 0;
             }
         }
 
-        public void Display()
+        private void DisplayAllStudents()
         {
-            switch (currentMenu)
+            foreach (var student in _students.Values)
             {
-                case 0:
-                    Console.Clear();
-                    Welcome();
-                    MainMenu();
-                    Navigate(Console.ReadLine());
-                    break;
-
-                case 1:
-                    Console.Clear();
-                    StudentMenu();
-                    Navigate(Console.ReadLine());
-                    break;
-
-                case 2:
-                    Console.Clear();
-                    CoursesMenu();
-                    Navigate(Console.ReadLine());
-                    break;
-
-                case -1:
-                    Console.Clear();
-                    ExitMessage();
-                    running = false;
-                    break;
+                Console.WriteLine(student.DisplayName());
             }
         }
+
+        private void DisplayAllCourses()
+        {
+            foreach (var course in _courses.Values)
+            {
+                Console.WriteLine(course.ToString());
+            }
+        }
+
+        private string BuildDictKey(string param)
+        {
+            var items = param;
+            return items;
+        }
+
     }
 }

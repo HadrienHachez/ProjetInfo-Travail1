@@ -28,7 +28,7 @@ namespace ConsoleApp
             var HumanInterface = new Interface(myStudents, myCourses);
 
             while(HumanInterface.running)
-                HumanInterface.Display();     
+                HumanInterface.Display();
 
         }
 
