@@ -32,9 +32,11 @@ namespace ConsoleApp
         {
             using (StreamWriter myFile = new StreamWriter(filePath))
                 {
-                    foreach (string line in list.Skip(2)) //Skipping the first 2 lines of text => Firstname and last name
-                        myFile.WriteLineAsync(line);
+                foreach (string line in list.Skip(2))
+                { //Skipping the first 2 lines of text => Firstname and last name
+                     myFile.WriteLine(line);
                 }
+            }
         }
 
         public static void WriteToFile(List<string> list, string filePath)

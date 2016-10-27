@@ -27,8 +27,6 @@ namespace ConsoleApp
 
             LinkEvalToStudent.FromFile(notesPath, myCourses, myStudents);
 
-            OutputBulletin.ToFile(outputPath, myStudents);
-
             var HumanInterface = new Interface(myStudents, myCourses);
 
             while(HumanInterface.running)
