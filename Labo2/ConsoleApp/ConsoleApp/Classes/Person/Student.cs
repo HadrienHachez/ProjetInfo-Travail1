@@ -43,7 +43,7 @@ namespace ConsoleApp
             if (CourseList.Count != 0)
             {
                 foreach (Course course in CourseList)
-                    bulletin.AppendLine(String.Format("\n{0} \n        Score:{1}/20 Z:{2}",
+                    bulletin.AppendLine(String.Format("\n{0} \n        Score:{1}/20 Z:{2:0.00}",
                                         course.ToString(),
                                         course.Note(DictKey()),
                                         ComputeZ(course)));
