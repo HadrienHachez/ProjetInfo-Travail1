@@ -55,6 +55,7 @@ namespace ConsoleApp
             }
         }
 
+        //Changes the currentMenu attribute to change menus
         private void Navigate()
         {
             MenuIndex();
@@ -71,6 +72,7 @@ namespace ConsoleApp
             }
         }
 
+        //Shows the menu index
         private void MenuIndex()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -83,11 +85,13 @@ namespace ConsoleApp
             Console.Write("Choose option [0-3] : ");
         }
 
+        //Shows the welcome message
         private void Welcome()
         {
             Console.WriteLine("__--** Bulletin 2.0 **--__\n");
         }
 
+        //Shows the exit message and clears the console
         private void ExitMessage(string exitMessage)
         {
             Console.WriteLine(exitMessage);
@@ -95,6 +99,7 @@ namespace ConsoleApp
             Console.Clear();
         }
 
+        //Shows the Student Menu
         private void StudentMenu()
         {
             string dictKey;
@@ -106,7 +111,7 @@ namespace ConsoleApp
                 string data = OutputStudentNotes("Input the firstname and lastname of the student : ", out dictKey);
                 Console.Clear();
                 Console.WriteLine(data);
-                if (dictKey != null)
+                if (dictKey != null) //If we match the input to a student, then print out it's bulletin
                 {
                     WriteBulletin(_students[dictKey]);
                 }
@@ -115,6 +120,7 @@ namespace ConsoleApp
             
         }
 
+        //Shows the Courses Menu
         private void CoursesMenu()
         {
             DisplayAllCourses();
@@ -140,29 +146,46 @@ namespace ConsoleApp
             }
         }
 
+        //Builds a dictionnary key from user input
         private string BuildDictKey(string userInput)
         {
-            return String.Concat(userInput.Split()).ToUpper();
+            return BuildDictKey(userInput.Split());
         }
 
+        //Builds a dictionnary key from a string array
+        private string BuildDictKey(string[] array)
+        {
+            return String.Concat(array).ToUpper();
+        }
+
+        //Shows a message and waits for user input
         private string GatherInput(string messageToShow)
         {
             Console.Write(messageToShow);
             return Console.ReadLine();
         }
 
+        //Outputs the Bulletin of a student
         private string OutputStudentNotes(string message, out string key)
         {
             string input = GatherInput(message);
             string dictKey = BuildDictKey(input);
 
-            if (_students.Keys.Contains(dictKey))
+            if (_students.Keys.Contains(dictKey)) 
             {
                 key = dictKey;
                 return _students[dictKey].Bulletin().ToString();
             }
             else
-            {
+            {   //trying to match a student with the firstname/lastname reversed
+                string[] array = input.Split(' ');
+                Array.Reverse(array);
+                string invertedDictKey = BuildDictKey(array);
+                if(_students.Keys.Contains(invertedDictKey))
+                    {
+                        key = invertedDictKey;
+                        return _students[invertedDictKey].Bulletin().ToString();
+                    }
                 key = null;
                 return String.Format("Student \"{0}\" doesn't exist\n", input);
             }

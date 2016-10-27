@@ -40,14 +40,18 @@ namespace ConsoleApp
 
             bulletin.AppendLine(DisplayName());
 
-            foreach (Course course in CourseList)
-                bulletin.AppendLine(String.Format("\n{0} \n        Score:{1}/20 Z:{2}", 
-                                    course.ToString(), 
-                                    course.Note(DictKey()), 
-                                    ComputeZ(course)));
+            if (CourseList.Count != 0)
+            {
+                foreach (Course course in CourseList)
+                    bulletin.AppendLine(String.Format("\n{0} \n        Score:{1}/20 Z:{2}",
+                                        course.ToString(),
+                                        course.Note(DictKey()),
+                                        ComputeZ(course)));
 
-            bulletin.AppendLine(String.Format("\nwith an average score of {0:P}", Average()));
-
+                bulletin.AppendLine(String.Format("\nwith an average score of {0:P}", Average()));
+            }
+            else
+                bulletin.AppendLine("\nDid not take any exams");
             return bulletin;
         }
 
