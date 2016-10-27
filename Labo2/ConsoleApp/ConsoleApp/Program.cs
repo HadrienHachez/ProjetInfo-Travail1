@@ -25,6 +25,8 @@ namespace ConsoleApp
             var myStudents = CreateDictPeople.Students(globalPath + "Students.txt");
             var myCourses = CreateDictCourse.FromFile(globalPath + "Activities.txt", myTeachers);
 
+            LinkEvalToStudent.FromFile(notesPath, myCourses, myStudents);
+
             var HumanInterface = new Interface(myStudents, myCourses);
 
             while(HumanInterface.running)

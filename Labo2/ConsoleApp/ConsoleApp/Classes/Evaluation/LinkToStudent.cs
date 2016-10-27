@@ -20,9 +20,11 @@ namespace ConsoleApp
                     string[] param = line.Split(';');
                     if (param.Length == 3)
                     {
-                        string studentKey = param[0] + param[1];
+                        Console.Write("_");
+                        string studentKey = (param[0] + param[1]).ToUpper();
                         if (students.ContainsKey(studentKey))
                         {
+                            Console.Write(".");
                             Student currentStudent = students[studentKey];
                             Course currentCourse = courses[key];
 

@@ -54,6 +54,22 @@ namespace ConsoleApp
             }
         }
 
+        private void Navigate()
+        {
+            MenuIndex();
+            string param = Console.ReadLine();
+            if (menuDict.Keys.Contains(param))
+            {
+                Console.WriteLine(currentMenu);
+                currentMenu = menuDict[param];
+            }
+            else
+            {
+                Console.WriteLine(currentMenu);
+                currentMenu = 0;
+            }
+        }
+
         private void MenuIndex()
         {
             Console.WriteLine("1) Main Menu");
@@ -78,6 +94,7 @@ namespace ConsoleApp
         {
             DisplayAllStudents();
             Console.WriteLine();
+            Console.WriteLine(OutputStudentNotes("Firstname lastname : "));
         }
 
         private void CoursesMenu()
@@ -86,25 +103,9 @@ namespace ConsoleApp
             Console.WriteLine();
         }
 
-        private void Navigate()
-        {
-            MenuIndex();
-            string param = Console.ReadLine();
-            if (menuDict.Keys.Contains(param))
-            {
-                Console.WriteLine(currentMenu);
-                currentMenu = menuDict[param];
-            }
-            else
-            {
-                Console.WriteLine(currentMenu);
-                currentMenu = 0;
-            }
-        }
-
         private void DisplayAllStudents()
         {
-            foreach (var student in _students.Values)
+            foreach (var student in _students.Values.OrderBy(x => x.DictKey()))
             {
                 Console.WriteLine(student.DisplayName());
             }
@@ -112,16 +113,30 @@ namespace ConsoleApp
 
         private void DisplayAllCourses()
         {
-            foreach (var course in _courses.Values)
+            foreach (var course in _courses.Values.OrderBy(x => x.DictKey()))
             {
                 Console.WriteLine(course.ToString());
             }
         }
 
-        private string BuildDictKey(string param)
+        private string BuildDictKey(string userInput)
         {
-            var items = param;
-            return items;
+            return String.Concat(userInput.Split()).ToUpper();
+        }
+
+        private string OutputStudentNotes(string message)
+        {
+            string dictKey = BuildDictKey(GatherInput(message));
+            if (_students.Keys.Contains(dictKey))
+                return _students[dictKey].Bulletin().ToString();
+            else
+                return "N'existe pas";
+        }
+
+        private string GatherInput(string messageToShow)
+        {
+            Console.Write(messageToShow);
+            return Console.ReadLine();
         }
 
     }

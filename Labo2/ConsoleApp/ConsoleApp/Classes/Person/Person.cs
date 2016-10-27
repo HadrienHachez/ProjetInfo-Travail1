@@ -36,7 +36,7 @@ namespace ConsoleApp
 
         public string DisplayName()
         {
-            return String.Format("{0} {1}", FirstName, LastName);
+            return String.Format("{1} {0}", FirstName, LastName);
         }
 
         public virtual string DictKey()
