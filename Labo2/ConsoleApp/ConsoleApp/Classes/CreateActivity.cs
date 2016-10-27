@@ -18,9 +18,11 @@ namespace ConsoleApp
                 int ects = 0;
                 bool success = int.TryParse(param[3], out ects);
 
-                if (success && teacherDict.ContainsKey(param[2]))
+                string dictKey = param[2].ToUpper();
+
+                if (success && teacherDict.ContainsKey(dictKey))
                 {
-                    return new Activity(param[1], ects, param[0], teacherDict[param[2]]);
+                    return new Activity(param[1], ects, param[0], teacherDict[dictKey]);
                 }
             }
 

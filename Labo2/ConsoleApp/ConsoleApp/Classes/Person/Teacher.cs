@@ -25,7 +25,7 @@ namespace ConsoleApp
 
         public override string DictKey()
         {
-            return LastName;
+            return LastName.ToUpper();
         }
 
         public Teacher(Person source, int salary) : base(source.FirstName, source.LastName)

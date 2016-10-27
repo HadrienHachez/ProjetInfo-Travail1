@@ -21,7 +21,7 @@ namespace ConsoleApp
 
         public override string DictKey()
         {
-            return LastName + FirstName;
+            return (LastName + FirstName).ToUpper();
         }
 
         public void Add(Course newCourse)
