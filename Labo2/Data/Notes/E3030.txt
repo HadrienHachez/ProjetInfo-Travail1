@@ -1,3 +1,4 @@
 ﻿Nom|Prénom|Note/Appréciation
-Hachez;Hadrien;16
-Krasowski;Marcin;12
+Hachez;Hadrien;13
+Krasowski;Marcin;18
+Lemenu;Valentin;14
