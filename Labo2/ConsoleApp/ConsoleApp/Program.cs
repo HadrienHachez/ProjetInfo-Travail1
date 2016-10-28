@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +14,10 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
+            string rootPathPath = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            string configFilePath = rootPathPath + @"\config.ini";
 
-            //Ne pas oublier d'adapter ces 2 lignes de code
-            // globalPath est le dossier où se trouvent les fichiers Students.txt, Teachers.txt, Activites.txt
-            // ainsi que le dossier contenant les notes pour chaque unité
-
-            string globalPath = @"C:\Data\";
+            string globalPath = FileWrapper.ReadFile(configFilePath)[0];
             string notesPath = globalPath + @"Notes\";
             string outputPath = globalPath + @"Output\";
 
